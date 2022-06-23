@@ -13,7 +13,7 @@
 #' -----------------
 #' Getting Help with R
 #' 
-#' https://www.r-project.org/help.html
+#' https://www.r-project.org/help.html [******]
 #' 
 #' - you can type CRAN into Google and search for the help you need at CRAN
 #' - ?read.table

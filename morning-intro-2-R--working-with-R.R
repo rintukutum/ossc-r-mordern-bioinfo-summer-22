@@ -100,7 +100,7 @@
 #'  Applying the integer function to it replaces all 
 #'  your numbers with zeros; definitely not what you intended. 
 #'  
-#'  x <- integer(x)
+#'  x <- integer(x) [??????]
 #'  x
 #'  
 #'  Make the numeric object first, then convert the object to 
@@ -116,11 +116,16 @@
 #'  Factors
 #'  
 #'  Factors are categorical variables that have a fixed number of levels. 
-#'  gender <- factor(c("female", "male", "female", "male", "female"))
+#'  y <- c( "male", "female", "female", "male", "female")
+#'  gender <- factor(y)
 #'  
+#'  gender_order <- factor(y, levels=c('male','female'))
 #'  class(gender)
 #'  mode(gender)
 #'  
+#'  as.numeric(gender)
+#'  as.numeric(gender_order)
+#'  as.numeric(y)
 #' -------- * --------
 #' Logical operations
 #' 
@@ -204,8 +209,34 @@
 #' 
 #' 
 #' Missing values and things that are not numbers
+#' y1 <- c(1,2,3,NA)
+#  y2 <- c(5,6,NA,NA)
+#  y3 <- c(9,NA,11,12)
+#  y4 <- c(NA,14,15,16)
 #' 
-#' 
+#' is.na(y1)
+list(
+  row_1 = 4,
+  row_2 = 3,
+  row_3 = 2,
+  row_4 = c(1,2)
+)
+
+na_pos <- list(
+  loop.1 = c('row' = 1, 'col' = 4),
+  loop.2 = c('row' = 2,'col' = 3),
+  loop.3 = c('row' = 3,'col' = 2),
+  loop.4 = list(
+    c('row' = 4,'col' = 1),
+    c('row' = 4,'col' = 2)
+  )
+)
+col_list <- list()
+for(i in 1:4){
+  col_list[[i]] <- which(is.na(chhavi_df[i,]))
+}
+
+
 #' Vectors and subscripts
 #' 
 #' 
@@ -214,6 +245,7 @@
 #' 
 #' Matrices and arrays
 #' 
+#' data.frame(y1, y2, y3, y4)
 #' 
 #' 
 #' Sampling
